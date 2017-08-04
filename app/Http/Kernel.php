@@ -56,5 +56,8 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+         'role' => \Laratrus\Middleware\LaratrusPermission::class,
+        'permission' => \Laratrus\Middleware\LaratrusPermission::class,
+        'abillity' => \Laratrus\Middleware\LaratrusAbility::class,
     ];
 }

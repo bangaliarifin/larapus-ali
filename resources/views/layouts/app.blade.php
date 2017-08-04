@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/font-awesome.min.css')}}" rel='stylesheet' type='text/css' >
+    <link herf="{{ asset('/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ ('asset/css/app.css}')}}">
 </head>
 <body>
     <div id="app">
@@ -36,15 +39,16 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+                            @if (Auth::check())
+                            <li><a href="{{ url('/home') }}">Dashboard</a></li>
+                            @endif
+                            </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                           <li><a href="{{ url('/register') }}">Daftar</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -75,6 +79,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+  <!-- <script src="/js/jquery-3.1.0.min.js"></script> -->
+  <script src="js/bootstrap.min.js"></script>
+  @yield('scripts')
 </body>
 </html>
