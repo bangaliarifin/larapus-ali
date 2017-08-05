@@ -17,7 +17,7 @@ class CreateBooksTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->integer('author_id')->unsigned();
-            $table->integer('amoutn')->unsigned();
+            $table->integer('amount')->unsigned();
             $table->string('cover')->nullable();
             $table->timestamps();
 
